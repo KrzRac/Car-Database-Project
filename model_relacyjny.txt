@@ -1,0 +1,17 @@
+Autokomis
+
+1. Marka (PK nazwa, rok_założenia)
+2. Model (PK id, nazwa, rok_wprowadzenia, FK Model_następnik, FK marka_nazwa)
+3. Samochód_osobowy (PK model_identyfikator, liczba_pasażerów, pojemność_bagażnika)
+4. Samochód_ciężarowy (PK model_idntyfikator, ładowność)
+5. Typ_silnika (PK identyfikator, rodzaj_paliwa, opis_parametrów)
+6. Model_silnik (PK [FK NOT NULL model_identyfikator, FK typ_silnika_identyfikator])
+7. Samochód (PK VIN, przebieg, skrzynia_biegów, kraj pochodzenia, rok_produkcji, 
+   FK model_id, FK typ_silnika_identyfikator)
+8. Dodatkowe_wyposażenie (PK nazwa)
+9. Wyposażenie_samochód (PK [FK samochód_VIN, FK dodatkowe_wyposażenie_nazwa])
+10. Dealer (PK nazwa, adres)
+11. Dealer_model (PK [FK dealer_nazwa, FK model_identyfikator]) 
+12. Dealer_samochód (PK [FK dealer_nazwa, FK samochód_VIN])
+13. Klient (PK id, imię, nazwisko, numer_telefonu)
+14. Sprzedaż (PK [data, FK klient_id, FK dealer_nazwa, samochód_VIN], cena)
